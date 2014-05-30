@@ -1,0 +1,4 @@
+bus;35
+trolleybus;30
+tram;20
+walk;3

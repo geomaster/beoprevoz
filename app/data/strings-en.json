@@ -1,0 +1,136 @@
+__g_FileContents = {
+
+ "global-title": 'Public transport'
+ 
+, "brand-prefix": 'beo'
+, "brand-title": 'prevoz'
+
+, "controls-setAsSource": 'Set as start'  
+, "controls-setAsDestination": 'Set as destination'
+, "controls-showInNetwork": 'Details'
+, "controls-nearestStops": 'Nearest stops'
+, "controls-vehicleInfo": 'Vehicle info'
+, "controls-removeAnchor": 'Remove'
+
+, "transport-bus": "bus"
+, "transport-trolleybus": "trolley"
+, "transport-tram": "tram"
+, "transport-busLine": "bus line"
+, "transport-trolleyLine": "trolley line"
+, "transport-tramLine": "tram line"
+
+, "routing-pointA": 'Starting point'
+, "routing-pointB": 'Destination point'
+, "routing-adhocPlace": 'Arbitrary location'
+
+, "messages-noGeolocation": 'Your device does not support geolocating.'
+, "messages-geolocationPositionUnavailable": 'Device position retrieval is currently unavailable. Please try again later.'
+, "messages-geolocationTimeout": 'Device position retrieval is taking too long. Please try again later.'
+, "messages-cannotDial": 'Vehicle info retrieval has failed.'
+
+, "geolocation-youAreHere": "You are here"
+, "geolocation-accuracy": "Precision: "
+
+, "geolocation-locatingWait": "Retrieving location..."
+, "geolocation-netViewError": "There was an error while retreiving the device's location."
+
+
+, "interface-lines": 'Lines'
+, "interface-stations": 'Stops'
+, "interface-nearby": 'Nearby'
+, "interface-map": 'Map'
+
+, "interface-mainSearchPlaceholder": 'Enter a search term or a line/stop'
+, "interface-cancel": 'Cancel'
+
+, "interface-lineSearchPlaceholder": 'Enter a line number'
+, "interface-stationSearchPlaceholder": 'Enter a stop name/number'
+
+, "interface-directionA": 'Direction A'
+, "interface-directionB": 'Direction B'
+
+, "interface-networkViewTitle": 'Transport Network'
+, "interface-lines": 'Lines'
+, "interface-stops": 'Stops'
+, "interface-transportMap": 'Map'
+, "interface-showMore": 'Show more'
+, "interface-nearby": 'Obližnje'
+
+, "interface-loading": 'Loading, please wait...'
+
+, "interface-lineInfoTitle": '[%type%] [%id%]'
+, "interface-stationInfoTitle": 'Stop [%id%]'
+, "interface-introductionTitle": 'Introduction'
+, "interface-introductionContents": ''
+, "interface-directionsTitle": "Directions"
+, "interface-routeLength": "Route length"
+, "interface-around": "about"
+, "interface-directionsRoute": "Route"
+
+, "interface-introductionContents": '<h2>Welcome!</h1>' + 
+                                     '<p>We are very glad you\'re using <strong>beoprevoz</strong>. In this short introduction you have the chance ' +
+                                     'to familiarize yourself with its workings so you can use it more efficiently. You can always proceed with your ' +
+                                     'work without reading this introduction by tapping the control on the side of the title.</p><p>In the main menu you are oferred ' +
+                                     'several options:</p>' +
+                                     '<img src="images/intro-map.png" class="full" />' +
+                                     '<h3>Mapa</h3>' +
+                                     '<p>You can access the map only if your device is connected to the Internet. There, you can see an interactive map of Belgrade ' +
+                                     'which you can zoom, pan and search.</p><p>Pan the map by simply dragging it around and zoom by ' +
+                                     'grabbing the screen with two fingers and \'pinching\' it.</p><p><img src="images/intro-mapsearch.png" class="semi" />To search the map, tap the big search field in the upper ' +
+                                     'portion of the screen and then type your query. You can search for locations in Belgrade (for example , <em>McDonald\'s Terazije</em>) or ' +
+                                     'public transport-related places (e.g. <em>line 7</em> to view the route of the tram number 7 or <em>116</em> to view ' +
+                                     'the <em>Staro Sajmište</em> stop). While you\'re typing, the application automatically shows the results of your search, which you can scroll. Tap your desired result ' +
+                                     'and it will be shown on the map as a marker.</p><p><img src="images/intro-marker.png" class="semi" />You can tap markers on the map to get more info and perform a few ' + 
+                                     'actions on the places they represent.</p>' +
+                                     '<img src="images/intro-network.png" class="full" />' +
+                                     '<h3>Transport network</h3>' +
+                                     '<p>The transport network systematically shows public transport data. In the bottom of the screen there exist several options: <strong>stops' +
+                                     '</strong>, for searching and viewing public transport stops; <strong>lines</strong>, for searching and viewing public transport lines; ' +
+                                     '<strong>nearby</strong>, for viewing nearby stations (if the device supports GPS or some other form of geolocation) ' +
+                                     'and <strong>map</strong> that displays a stylized map of Belgrade which shows all lines and their traces.</p>' +
+                                     '<p>To search for a line or stop, tap the search box and start typing: the results are automatically shown. ' +
+                                     'Tap one of the items to view detailed info on it.</p>' +
+                                     '<p><img src="images/intro-transportMap.png" class="semi" />Navigating through the public transport map functions the same way navigating through the global Belgrade map does.</p>' +
+                                     '<img src="images/intro-directions.png" class="full" />' +
+                                     '<h3>Directions</h3>' +
+                                     '<p>In the application you can set some places or stations as starting or destination points. When you set both of the points, the application will ' +
+                                     'automatically calculate the shortest path (it will <em>route</em> between the two points) and travel directions via public transport. Tapping the <em>Show</em> button will allow you to view them, ' +
+                                     'and if you want to see them later on you can choose <em>latest directions</em> in the main menu.</p>' +
+                                     '<h3>Legend</h3>' +
+                                     '<p>The following icons appear within the application:<ul class="legend">' +
+                                     '<li><img src="icons/menu-32.png" /> Tapping this icon will take you to the main menu.</li>' +  
+                                     '<li><img src="icons/geolocation-32.png" /> Tapping this icon will make the application retrieve your device\'s current physical location and display it on the map.</li>' +
+                                     '<li><img src="icons/removemarkers-32.png" /> Tapping this icon will clear the map of all markers.</li>' +
+                                     '<li><img src="icons/show-on-map-icon.png" class="iface-icon" /> Tapping this icon will show the station or line you\'re currently viewing on the interactive map.</li>' +
+                                     '<li><img src="icons/pointA-32.png" /> <img src="icons/pointB-32.png" />These two icons represent the starting and destination point of the route you want to get, respectively. ' +
+                                     'If they are shown next to a stop name, you can conveniently tap one of them to set the starting or destination point to that stop.</li>' +
+                                     '</ul></p><h2>That\'s it!</h3><p>You\'re completely ready to use <strong>beoprevoz</strong>! Tap the control in the header of the screen to start.</p>'
+                                     
+
+, "interface-introSwapLanguage": "promeni jezik u srpski"
+
+, "interface-calculatingDirections": 'Routing, please wait...'
+, "interface-calculatedDirections": 'Routing has finished!'
+, "interface-showDirections": 'Show'
+, "interface-close": 'Close'
+
+, "interface-menuMapTitle": 'map'
+, "interface-menuMapSubtitle": 'An interactive map of Belgrade with public transport info. Internet access is required.'
+, "interface-menuNetworkTitle": 'transport network'
+, "interface-menuNetworkSubtitle": 'Allows you to browse lines, stops and retrieve info on them.'
+, "interface-directionsTtile": 'latest directions'
+, "interface-directionsSubtitle": 'If you previously requested directions between two points, you may view them here.'
+, "interface-menuIntroductionTitle":  'introduction'
+, "interface-menuIntroductionSubtitle": 'If you need help, read the short introduction for the app.'
+
+, "interface-mapErrorHeading": ':('
+, "interface-mapErrorTitle": 'Map is unavailable.'
+, "interface-mapErrorSubtitle": 'Please check your Internet connection.'
+, "interface-mapErrorRetry": 'Try again'
+, "interface-mapErrorBack": 'Back'
+
+, "interface-vehicleInfo": 'Vehicle info'
+, "interface-vehicleInfoDisclaimer": 'The BusPlus USSD service is used for vehicle info retrieval. The service is priced at 1.8 RSD (around €0.015) incl. VAT.'
+
+, "routing-disclaimer": 'The directions presented before you were generated by an automated system and are thus subject to unintended mistakes. The author of this application and routing algorithm shall not be held liable for any consequences that may arise from the usage of these directions. Although a lot of effort has been put into the promptness of the data used and precision of the routing subsystem, the author can not guarantee the fitness of this algorithm for any particular purpose.'
+}

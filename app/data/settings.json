@@ -1,0 +1,126 @@
+__g_FileContents = {
+  "stopMarkerUrl": 'icons/marker-stop-icon-red.png'
+, "stopMarkerRetinaUrl": 'icons/marker-stop-icon-red-2x.png'
+, "stopMarkerAltUrl": 'icons/marker-stop-icon-blue.png'
+, "stopMarkerAltRetinaUrl": 'icons/marker-stop-icon-blue-2x.png'
+
+, "geolocationMarkerUrl": 'icons/marker-geolocation.png'
+, "geolocationMarkerRetinaUrl": 'icons/marker-geolocation-2x.png'
+
+, "maxLineSearchResults": 5
+, "maxStationSearchResults": 5
+, "maxStationTextSearchResults": 5
+
+, "pointAMarkerUrl": 'icons/pointA-32.png'
+, "pointAMarkerRetinaUrl": 'icons/pointA-32.png'
+, "pointBMarkerUrl": 'icons/pointB-32.png'
+, "pointBMarkerRetinaUrl": 'icons/pointB-32.png'
+
+, "pointShadowUrl": 'icons/point-shadow.png'
+, "pointMarkerSize": [ 32, 32 ]
+, "pointShadowSize": [ 40, 41 ]
+, "pointMarkerAnchor": [ 16, 16 ]
+, "pointShadowAnchor": [ 20, 16 ]
+, "pointPopupAnchor": [ 0, -8 ]
+
+, "searchResLineTypeSuffix": '-128-white.png'
+, "popupLineTypeSuffix": '-32-black.png'
+, "maxStationsBeforeTruncation": 2
+
+, "stopIconUrl": 'icons/stop-128-white.png'
+, "defaultIconUrl": 'icons/marker-icon.png'
+
+, "googleMapType": 'ROADMAP'
+
+, "pathOpacity": 0.5
+
+, "linePathColor": '#B1220E'
+, "linePathColorAlt": '#046BBF'
+
+, "lineTextSpacing": 46
+, "distanceTextSpacing": 26
+, "nullTextSpacing": 4
+
+
+, "stationPopupControls": [
+    {
+      "cmd": "setAsSource"
+,     "text": _$$('controls-setAsSource')
+    }
+,   {
+      "cmd": "setAsDestination"
+,     "text": _$$('controls-setAsDestination')
+    } 
+,   {
+      "cmd": "showInNetwork"
+,     "text": _$$('controls-showInNetwork')
+    } 
+  ]
+, "linePopupControls": [
+    {
+      "cmd": "showInNetwork"
+,     "text": _$$('controls-showInNetwork')
+    } 
+  ]
+, "placePopupControls": [
+    {
+      "cmd": "setAsSource"
+,     "text": _$$('controls-setAsSource')
+    }
+,   {
+      "cmd": "setAsDestination"
+,     "text": _$$('controls-setAsDestination')
+    }
+,   {
+      "cmd": "nearestStops"
+,     "text": _$$('controls-nearestStops')
+    }      
+  ]
+, "anchorPopupControls": [
+    {
+      "cmd": "removeAnchor"
+,     "text": _$$('controls-removeAnchor')
+    }
+  ]
+  
+, "nearestStopCount": 4
+, "nearestStationsLimitIncreaseGranularity": 1.5
+, "stopTraceWeight": 6
+, "stopTraceColor": '#1B9C14'
+, "stopSecondaryTraceWeight": 3
+, "stopSecondaryTraceColor": '#1B9C14'
+
+, "netViewNearestStops": 30
+
+, "fitPaddingX": 15
+, "fitPaddingY": 15
+
+, "keypressSearchInterval": 900
+, "searchWatcherInterval": 1200
+
+, "netSearchWatcherInterval": 200
+
+, "netViewItemsPerPage": 7
+
+, "walkKmh": 4.5
+
+, "nearestStationsSrc": 90
+, "nearestStationsDest": 90
+
+, "distLimitSrc": 0.5
+, "distLimitDest": 0.5
+, "distLimitSrcBias": 0.017
+, "distLimitDestBias": 0.017
+
+, "routeVariantCount": 3
+
+, "mapLoadTimeout": 15
+, "googleMapsURL": "https://maps.googleapis.com/maps/api/js?libraries=places&sensor=true&callback="
+, "googleMapLabelURL": "js/lib/google-maplabel.js"
+
+, "ussdPrefix": "*011*"
+, "ussdSuffix": "#"
+
+, "lineLabelFontSize": 18
+, "lineLabelFontFamily": "Fira Sans"
+}

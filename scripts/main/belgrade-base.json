@@ -1,0 +1,62 @@
+{
+  "displayName": "Beograd",
+  "acceptableResultFilter": [
+    ", Belgrade",
+    ", Београд",
+    ", Beograd"
+  ],
+  "name": "belgrade",
+  "country": "sr",
+  "startLocation": [44.808543, 20.465372],
+  "startZoom": 14,
+  "minZoom": 9,
+  "approximateRect": {
+    "southWest":     [44.64716, 20.13245],
+    "northEast":     [45.12587, 20.72159]
+  },
+  "lineTypeOrdering": [
+    "tram", "trolleybus", "bus"
+  ],
+  "tracemap": {
+    "available": 1,
+    "maxZoom": 20,
+    "minZoom": 18,
+    "dimensions": [4500, 3500],
+    "tileDimensions": [256, 256],
+    "url": "data/areas/tracemaps/belgrade/{z}/map_tile_{x}_{y}.png"
+  },
+  "lineTypes": [
+    {
+      "displayName": "!$transport-bus",
+      "lineName": "!$transport-busLine",
+      "name": "bus",
+      "queries": [
+        "bus", "autobus", "бус", "аутобус"
+      ]
+    },
+    {
+      "displayName": "!$transport-trolleybus",
+      "lineName": "!$transport-trolleyLine",
+      "name": "trolleybus",
+      "queries": [
+        "trolejbus", "trola", "трола", "тролејбус"
+      ]
+    },
+    {
+      "displayName": "!$transport-tram",
+      "lineName": "!$transport-tramLine",
+      "name": "tram",
+      "queries": [
+        "tramvaj", "trandža", "trandza", "трамвај", "транџа"
+      ]
+    }
+  ],
+  "lineQueries": [
+    "linija", "линија", "br", "бр"
+  ],
+  "stationQueries": [
+    "stanica", "stajalište", "stajaliste", "станица", "стајалиште"
+  ]
+}
+  
+    

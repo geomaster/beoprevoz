@@ -1,0 +1,130 @@
+__g_FileContents = {
+
+ "global-title": 'Javni prevoz'
+ 
+, "brand-prefix": 'beo'
+, "brand-title": 'prevoz'
+
+, "controls-setAsSource": 'Postavi kao početak'  
+, "controls-setAsDestination": 'Postavi kao odredište'
+, "controls-showInNetwork": 'Detaljnije'
+, "controls-nearestStops": 'Najbliža stajališta'
+, "controls-removeAnchor": 'Ukloni'
+
+, "transport-bus": "autobus"
+, "transport-trolleybus": "trolejbus"
+, "transport-tram": "tramvaj"
+, "transport-busLine": "autobuska linija"
+, "transport-trolleyLine": "trolejbuska linija"
+, "transport-tramLine": "tramvajska linija"
+
+, "routing-pointA": 'Početna tačka'
+, "routing-pointB": 'Krajnja tačka'
+, "routing-adhocPlace": 'Proizvoljna lokacija'
+
+, "messages-noGeolocation": 'Vaš telefon ne podržava geolociranje.'
+, "messages-geolocationPositionUnavailable": 'Trenutno nije moguće dobaviti poziciju telefona. Pokušajte ponovo kasnije.'
+, "messages-geolocationTimeout": 'Dobavljanje pozicije telefona traje predugo. Pokušajte ponovo kasnije.'
+, "messages-cannotDial": 'Dobavljanje informacije o vozilima nije uspelo.'
+
+, "geolocation-youAreHere": "Nalazite se ovde"
+, "geolocation-accuracy": "Preciznost: "
+, "geolocation-locatingWait": "Dobavljanje pozicije..."
+, "geolocation-netViewError": "Dogodila se greška prilikom dobavljanja pozicije."
+
+, "interface-chooseAreaTitle": 'Odaberite oblast'
+, "interface-mainSearchPlaceholder": 'Unesite pojam ili liniju/stajalište'
+, "interface-cancel": 'Opozovi'
+
+, "interface-lineSearchPlaceholder": 'Unesite broj linije'
+, "interface-stationSearchPlaceholder": 'Unesite naziv/broj stajališta'
+
+, "interface-directionA": 'Smer A'
+, "interface-directionB": 'Smer B'
+
+, "interface-networkViewTitle": 'Mreža prevoza'
+, "interface-lines": 'Linije'
+, "interface-stops": 'Stajališta'
+, "interface-transportMap": 'Karta'
+, "interface-nearby": 'Obližnje'
+, "interface-showMore": 'Prikaži još'
+
+, "interface-loading": 'Učitavanje, molimo sačekajte...'
+
+, "interface-lineInfoTitle": '[%type%] [%id%]'
+, "interface-stationInfoTitle": 'Stajalište [%id%]'
+, "interface-introductionTitle": 'Uvod'
+, "interface-introductionContents": '<h2>Dobrodošli!</h1>' + 
+                                     '<p>Drago nam je da koristite aplikaciju <strong>beoprevoz</strong>. U nastavku ovog kratkog uvoda imate ' +
+                                     'priliku da se upoznate sa načinom njenog rada kako biste je efikasnije koristili. Uvek možete nastaviti sa ' +
+                                     'radom bez čitanja uvoda pritiskanjem kontrole u naslovu.</p><p>U glavnom meniju aplikacije Vam je ponuđeno ' +
+                                     'nekoliko opcija.</p>' +
+                                     '<img src="images/intro-map.png" class="full" />' +
+                                     '<h3>Mapa</h3>' +
+                                     '<p>Mapi možete pristupiti samo ukoliko je Vaš uređaj povezan na Internet. Tu vidite interaktivnu mapu Beograda ' +
+                                     'koju možete zumirati, pomerati i pretraživati.</p><p>Pomerajte mapu jednostavnim povlačenjem preko ekrana a zumirajte ' +
+                                     'tako što ćete pomoću dva prsta uhvatiti ekran i "uštinuti" ga.</p><p><img src="images/intro-mapsearch.png" class="semi" />Za pretraživanje mape kliknite na veliko polje u vrhu ' +
+                                     'ekrana a zatim ukucajte željenu pretragu. Možete tražiti lokacije u Beogradu (na primer, <em>McDonald\'s Terazije</em>) ili ' +
+                                     'pojmove u vezi sa gradskim prevozom (na primer, <em>linija 7</em> da dobijete trasu tramvaja br. 7 ili <em>116</em> da dobijete ' +
+                                     'stajalište <em>Staro Sajmište</em>). Dok kucate, aplikacija će Vam prikazivati rezultate koje možete listati. Kliknite na željeni ' +
+                                     'rezultat i on će biti prikazan na mapi kao marker.</p><p><img src="images/intro-marker.png" class="semi" />Možete pritisnuti markere na mapi kako biste dobili više informacija i nekoliko ' + 
+                                     'akcija u vezi sa njima.</p>' +
+                                     '<img src="images/intro-network.png" class="full" />' +
+                                     '<h3>Mreža prevoza</h3>' +
+                                     '<p>Mreža prevoza sistematski pokazuje podatke u vezi sa prevozom. U dnu se nalaze četiri različite opcije: <strong>stajališta' +
+                                     '</strong>, za prikaz i pretragu stajališta gradskog prevoza; <strong>linije</strong>, za prikaz i pretragu linija gradskog ' +
+                                     'prevoza; <strong>obližnje</strong>, za prikaz trenutno najbližih stajališta (ukoliko uređaj podržava GPS ili neki drugi sistem ' +
+                                     'lociranja) i <strong>karta</strong>, za prikaz stilizovane karte gradskog prevoza gde se vide sve linije i njihove trase.</p>' +
+                                     '<p>Za pretragu linija ili stajališta, kliknite na veliko polje za pretragu i počnite da kucate: rezultati se momentalno pojavljuju. ' +
+                                     'Pritisnite neku od stavki da biste videli detalje o njoj.</p>' +
+                                     '<p><img src="images/intro-transportMap.png" class="semi" />Navigacija kroz mapu gradskog prevoza funkcioniše po sličnom principu kao i navigacija kroz glavnu mapu.</p>' +
+                                     '<img src="images/intro-directions.png" class="full" />' +
+                                     '<h3>Uputstva</h3>' +
+                                     '<p>U aplikaciji možete postaviti neka mesta ili stajališta kao početne ili krajnje tačke. Kada podesite obe tačke, aplikacija će ' +
+                                     'automatski izračunati najkraći put (<em>rutirati</em>) gradskim prevozom između njih i samim tim uputstva za putovanje. Pritiskom na dugme <em>Prikaži</em> potom ih možete pogledati, a ako ' +
+                                     'želite da se kasnije vratite na njih možete odabrati opciju <em>poslednja uputstva</em> u glavnom meniju.</p>' +
+                                     '<h3>Legenda</h3>' +
+                                     '<p>Sledeće ikone se pojavljuju unutar aplikacije:<ul class="legend">' +
+                                     '<li><img src="icons/menu-32.png" /> Pritiskom na ovu ikonu vraćate se na glavni meni aplikacije.</li>' +  
+                                     '<li><img src="icons/geolocation-32.png" /> Pritiskom na ovu ikonu aplikacija će dobaviti trenutnu geografsku lokaciju i prikazati je na mapi.</li>' +
+                                     '<li><img src="icons/removemarkers-32.png" /> Pritiskom ovde brišete sa mape sve markere i \'čistite\' je.</li>' +
+                                     '<li><img src="icons/show-on-map-icon.png" class="iface-icon" /> Pritiskom na ovu ikonu prikazujete na mapi liniju ili stajalište koje trenutno posmatrate.</li>' +
+                                     '<li><img src="icons/pointA-32.png" /> <img src="icons/pointB-32.png" />Ove dve ikone predstavljaju redom početnu i krajnju tačku za rutiranje (nalažanje najkraćeg puta). Ako se nalaze pored imena stajališta, pritiskom ' +
+                                     'na neku od njih možete to stajalište lako postaviti kao početnu ili krajnju tačku.</li>' +
+                                     '</ul></p><h2>To je to!</h3><p>Potpuno ste spremni za korišćenje <strong>beoprevoz</strong>a! Pritisnite kontrolu pored naslova da biste počeli sa korišćenjem.</p>'
+                                     
+
+, "interface-introSwapLanguage": "view in english"
+
+, "interface-directionsTitle": "Uputstva"
+, "interface-routeLength": "Vreme puta"
+, "interface-around": "oko"
+, "interface-directionsRoute": "Put"
+
+, "interface-calculatingDirections": 'Sastavljanje uputstava, sačekajte...'
+, "interface-calculatedDirections": 'Uputstva između odabranih tačaka su sastavljena!'
+, "interface-showDirections": 'Prikaži'
+, "interface-close": 'Zatvori'
+
+, "interface-menuMapTitle": 'mapa'
+, "interface-menuMapSubtitle": 'Interaktivna mapa Beograda uz podakte o gradskom prevozu. Zahteva pristup Internetu.'
+, "interface-menuNetworkTitle": 'mreža prevoza'
+, "interface-menuNetworkSubtitle": 'Ovde možete pretražiti linije, stajališta i kartu gradskog prevoza i pogledati detalje o njima.'
+, "interface-menuSettingsTitle": 'podešavanja'
+, "interface-menuSettingsSubtitle": 'Podesite beoprevoz prema vašim potrebama za maksimalnu udobnost.'
+, "interface-directionsTtile": 'poslednja uputstva'
+, "interface-directionsSubtitle": 'Pogledajte uputstva za put između dve tačke, ukoliko ste ih ranije zatražili.'
+, "interface-menuIntroductionTitle":  'uvod'
+, "interface-menuIntroductionSubtitle": 'Ukoliko vam je potrebna pomoć, pogledajte kratak uvod u aplikaciju.'
+
+, "interface-mapErrorHeading": ':('
+, "interface-mapErrorTitle": 'Mapa nije dostupna.'
+, "interface-mapErrorSubtitle": 'Molimo Vas da proverite pristup Internetu.'
+, "interface-mapErrorRetry": 'Pokušajte ponovo'
+, "interface-mapErrorBack": 'Nazad'
+
+, "interface-vehicleInfo": 'Info o vozilima'
+, "interface-vehicleInfoDisclaimer": 'Za dobavljanje informacija o obližnjim vozilima koristi se BusPlus USSD servis. Cena usluge je 1,8 dinara sa PDV-om.'
+
+, "routing-disclaimer": 'Uputstva koja su Vam prikazana su generisana od strane automatizovanog sistema i kao takva su podložna greškama. Autor aplikacije i algoritma rutiranja ne snosi nikakve posledice koje mogu nastati praćenjem ovih uputstava. Iako je sve učinjeno kako bi podaci bili ažurni a sistem rutiranja što tačniji, autor ne može garantovati podobnost algoritma ni za kakvu upotrebu.'
+}

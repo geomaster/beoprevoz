@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "name": "Beoprevoz",
+  "description": "Pomaže u kretanju javnim prevozom u Beogradu i pruža informacije o stajalištima, linijama, najkraćim putevima i najbližim vozilima",
+  "launch_path": "/index.html",
+  "icons": {
+    "30": "/icons/app-30.png",
+    "60": "/icons/app-60.png",
+    "128": "/icons/app-128.png",
+    "256": "/icons/app-256.png"
+  },
+  "developer": {
+    "name": "David Davidović"
+  },
+  "installs_allowed_from": ["*"],
+  "locales": {
+    "en": {
+      "name": "Beoprevoz",
+      "description": "Helps navigate using the public transport in Belgrade and provides information on stations, lines, shortest routes and nearest vehicles"
+    }
+  },
+  "permissions": {
+    "geolocation": {
+      "description": "Potrebno za prikazivanje trenutne lokacije na mapi javnog prevoza"
+    }
+  },
+  "default_locale": "sr"
+}

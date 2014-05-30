@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  
+  <title data-l10n-string="global-title">Public transport</title>
+  
+  <link rel="stylesheet" href="styles/leaflet/leaflet.css" />
+  
+  <link rel="stylesheet" href="styles/transitions.css" />
+  <link rel="stylesheet" href="styles/typefaces.css" />
+  
+  <link rel="stylesheet" href="styles/headers.css" />
+  <link rel="stylesheet" href="styles/lists.css" />
+  <link rel="stylesheet" href="styles/input_areas.css" />
+  <link rel="stylesheet" href="styles/buttons.css" />
+  <link rel="stylesheet" href="styles/tabs.css" />
+  <link rel="stylesheet" href="styles/confirm.css" />
+  <link rel="stylesheet" href="styles/toolbars.css" />
+  <link rel="stylesheet" href="styles/progress_activity.css" />
+    
+  <link rel="stylesheet" href="styles/openlayers/style.css" />
+  <link rel="stylesheet" href="styles/openlayers/google.css" />
+  
+  <link rel="stylesheet" href="icons/styles/action-icons.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/util.css" />
+  
+</head>
+<body role="application">
+  <div style="z-index:5000; /* fuck you, firefox, you cunt. */" id="modal-loading">
+    <progress></progress>
+  </div>
+  
+  <div class="activity" id="directions-popup">
+    <div id="directions-calculating-wrapper" class="wrapper ghostly">
+      <div id="directions-calculating">
+        <progress></progress>
+        <span data-l10n-string="interface-calculatingDirections">Calculating directions</span>
+      </div>
+    </div>
+    <div id="directions-finished-wrapper" class="wrapper ghostly">
+      <div id="directions-finished">
+        <div class="container">
+          <div class="icon"><img src="icons/tick-48.png" /></div>
+          <div class="info">
+            <span data-l10n-string="interface-calculatedDirections">Directions calculated</span>
+            <menu>
+              <button id="show-directions" data-l10n-string="interface-showDirections">Show</button>
+              <button id="hide-directions" data-l10n-string="interface-close">Close</button>
+            </menu>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <section role="region" id="menu-screen" data-position="current">
+    <article class="scrollable">
+      <div class="language">
+        <div data-localization="sr" class="selection">srpski</div>
+        <div data-localization="en" class="selection">english</div>
+      </div>
+      <h1><span data-l10n-string="brand-prefix" id="beo">beo</span><span data-l10n-string="brand-title">prevoz</span></h1>
+      <div id="main-menu-selections">
+        <div id="bigbutton-map" class="bigbutton disabled">
+          <h2 data-l10n-string="interface-menuMapTitle">map<progress></progress></h2>
+          <h3 data-l10n-string="interface-menuMapSubtitle">Show map of city for show many different thing. Is good but Internet is must</h3>
+        </div>
+        <div id="bigbutton-network" class="bigbutton">
+          <h2 data-l10n-string="interface-menuNetworkTitle">transport network</h2>
+          <h3 data-l10n-string="interface-menuNetworkSubtitle">It is show glorious master transport. It is glorify many Belgrade transport.</h3>
+        </div>
+        <div id="bigbutton-directions" class="bigbutton disabled">
+          <h2 data-l10n-string="interface-directionsTtile">view last directions</h2>
+          <h3 data-l10n-string="interface-directionsSubtitle">It is expose direction</h3>
+        </div>
+        <!--<div id="bigbutton-settings" class="bigbutton">
+          <h2 data-l10n-string="interface-menuSettingsTitle">settings</h2>
+          <h3 data-l10n-string="interface-menuSettingsSubtitle">It is allow you for set many seting of customization goodness</h3>
+        </div>-->
+        <div id="bigbutton-introduction"class="bigbutton">
+          <h2 data-l10n-string="interface-menuIntroductionTitle">introduction</h2>
+          <h3 data-l10n-string="interface-menuIntroductionSubtitle">Many introduce is production for convenient of usable and good</h3>
+        </div>
+      </div>      
+    </article>
+  </section>
+  
+  <section role="region" id="map-screen" data-position="right">
+    <div class="map-disabled ghostly" id="map-disabled-overlay">
+      <h1 data-l10n-string="interface-mapErrorHeading">:(</h1>
+      <h2 data-l10n-string="interface-mapErrorTitle">The map cannot be loaded.</h2>
+      <h3 data-l10n-string="interface-mapErrorSubtitle">Please check your Internet connection</h3>
+      <div class="actions">
+        <button id="map-fail-retry" data-l10n-string="interface-mapErrorRetry">Tap here to retry</button>
+        <button class="recommend" id="map-fail-back" class="back-button" data-l10n-string="interface-mapErrorBack">Back to the menu</button>
+      </div>
+    </div>
+	  
+    <form role="search" id="map-searchbox" class="full">
+      <button type="submit" data-l10n-string="interface-search">Search</button>
+      <p>
+        <input type="text" id="map-search-text" data-l10n-placeholder-string="interface-mainSearchPlaceholder" placeholder="Enter search term" required="" />
+        <button type="reset" id="map-search-reset" data-l10n-string="interface-cancel">Cancel</button>
+      </p>
+    </form>
+    <div id="map-search-suggestions" class="invisible search-suggestions">
+      <ul id="transport-suggestions">
+      
+      </ul>
+      <ul id="google-suggestions">
+      
+      </ul>
+      <div class="powered-by-google"></div>
+    </div>
+   <div class="map-hud-icons">
+      <ul>
+        <li><a class="icon" id="menu-hud" href="#"></a></li>
+        <li><a class="icon" id="geolocation-hud"href="#"><progress id="geolocation-progress" class="hide"></progress></a></li>
+        <li><a class="icon" id="remove-markers-hud" href="#"></a></li>
+      </ul>
+    </div>
+    <div class="needsclick" id="main-map-area">
+
+    </div>
+  </section>
+  
+  <section role="region" class="swipable" id="network-view-screen" data-position="right">
+    <header class="fixed">
+      <button id="network-view-back" class="back-button"><span class="icon icon-back">back</span></button>
+      <h1 data-l10n-string="interface-networkViewTitle">Transport network</h1>
+    </header>
+    <!-- Entering the Harem -->
+    <article id="net-search-field" class="input frame">
+      <form role="search" id="net-searchbox" class="header full">
+        <button type="submit" data-l10n-string="interface-search">Search</button>
+        <p>
+          <input type="text" id="net-search-text" required="" />
+          <button type="reset" id="net-search-reset" data-l10n-string="interface-cancel">Cancel</button>
+        </p>
+      </form>
+    </article>
+    <div id="net-view-content" class="content scrollable">
+      <section id="net-view-list" data-type="list">
+      
+      </section>
+      <button id="net-view-load-more" data-l10n-string="interface-showMore">Show more</button>
+    </div>
+    <div id="net-view-map" class="ghostly">
+      <div id="net-view-map-container">
+      </div>
+    </div>
+    <div id="net-view-filters" role="toolbar">
+      <ul class="bottom" role="tablist" id="net-view-filter" data-type="filter" data-items="4">
+        <li id="network-view-filter-stops" aria-selected="true" role="tab"><a data-l10n-string="interface-stops" href="#">Stops</a></li>
+        <li id="network-view-filter-lines" role="tab"><a data-l10n-string="interface-lines" href="#">Lines</a></li>
+        <li id="network-view-filter-nearby" role="tab"><a data-l10n-string="interface-nearby" href="#">Nearby</a></li>
+        <li id="network-view-filter-map" role="tab"><a data-l10n-string="interface-transportMap" href="#">Map</a></li>
+      </ul>
+    </div>-
+  </section>
+
+  <section role="region" class="swipable" id="line-info-screen" data-position="right">
+    <header class="fixed">
+      <button id="line-info-back" class="back-button"><span class="icon icon-back">back</span></button>
+      <menu type="toolbar">
+        <button id="line-show-on-map"><span class="my-icon icon-show-on-map">show on map</span></button>
+      </menu>
+    
+      <h1 id="line-info-title">#line-info-screen</h1>
+    </header>
+    <article class="content scrollable header">
+      <div class="line-header-desc">
+        <div id="line-terminusA">
+          <div class="station-name"><span id="line-info-start-name">First station</span> <span class="insignificant">(</span><span id="line-info-start-id" class="insignificant">(101)</span><span class="insignificant">)</span></div>
+          <div class="terminus terminus-A"></div>
+        </div>
+        <hr />
+        <div id="line-terminusM">
+          <div class="station-name"><span id="line-info-mid-name">Middle station</span> <span class="insignificant">(</span><span id="line-info-mid-id" class="insignificant">(102)</span><span class="insignificant">)</span></div>
+          <div class="terminus terminus-M"></div>
+        </div>
+        <hr id="terminusM-line" />
+        <div id="line-terminusB">
+          <div class="station-name"><span id="line-info-end-name">Last station</span> <span class="insignificant">(</span><span id="line-info-end-id" class="insignificant">(103)</span><span class="insignificant">)</span></div>
+          <div class="terminus terminus-B"></div>
+        </div>
+        <hr />
+      </div>
+      <div class="stops stops-left">
+        <span class="direction" data-l10n-string="interface-directionA">Direction A</span>
+        <hr class="direction" />
+        <ul id="line-stops-dirA" >
+         
+        </ul>
+      </div>
+      <div class="stops stops-right">
+        <span class="direction" data-l10n-string="interface-directionB">Direction B</span>
+        <hr class="direction" />  
+        <ul id="line-stops-dirB" >
+       
+        </ul>
+      </div>
+    </article>
+  </section>
+  
+  <section role="region" class="swipable" id="station-info-screen" data-position="right">
+    <header class="fixed">
+      <button id="station-info-back" class="back-button"><span class="icon icon-back">back</span></button>
+      <menu type="toolbar">
+        <button id="station-show-on-map"><span class="my-icon icon-show-on-map">show on map</span></button>
+      </menu>
+      <h1 id="station-info-title">#station-info-screen</h1>    
+    </header>
+    <article class="content scrollable header">
+      <section id="station-info-name" class="title">
+        <img src="icons/stop-128-black.png" class="title-icon" /><span id="station-info-name-field">Station name</span>
+        <div class="routing-controls">
+          <a href="#" class="routing-pointA inactive"><img src="icons/pointA-48.png" /></a>
+          <a href="#" class="routing-pointB inactive"><img src="icons/pointB-48.png" /></a>
+        </div>
+        <div class="clear"></div></div>
+        <hr />
+        <div class="line-list" id="station-info-lines">
+          <ul>
+            <li>
+              <a href="#" class="line-clickable">70</a>
+              <div class="desc">Station A - Station B<!--<div class="subtitle">3 stations away</div>--></div>
+            </li>
+            <li class="subtitled">
+              <a href="#" class="line-clickable">73</a>
+              <div class="desc">Station C - Station D<div class="subtitle">4 stations away</div></div>
+            </li>
+            <li class="subtitled">
+              <a href="#" class="line-clickable">96</a>
+              <div class="desc">Station E - Station F<div class="subtitle">0 stations away</div></div>
+            </li>
+          </ul>
+        </div>
+      </section>    
+      <button id="station-vehicle-info" data-l10n-string="interface-vehicleInfo">Vehicle info</button>
+      <p class="fine-print" data-l10n-string="interface-vehicleInfoDisclaimer">Disclaimer!</p> 
+    </article>
+  </section>
+  
+  <section role="region" class="swipable" id="directions-screen" data-position="right">
+    <header class="fixed">
+      <button id="directions-back" class="back-button"><span class="icon icon-back">back</span></button>
+      <h1 data-l10n-string="interface-directionsTitle">Directions</h1>
+      <ul role="tablist" data-type="filter" id="directions-filter" data-items="3">
+        <li id="directions-filter1" aria-selected="true" role="tab"><a href="#"><span data-l10n-string="interface-directionsRoute">Route</span> 1</a></li>
+        <li id="directions-filter2" role="tab"><a href="#"><span data-l10n-string="interface-directionsRoute">Route</span> 2</a></li>
+        <li id="directions-filter3" role="tab"><a href="#"><span data-l10n-string="interface-directionsRoute">Route</span> 3</a></li>
+      </ul>
+    </header>
+    <article class="content scrollable header-filter">
+      <section class="directions-header-desc">
+        <div id="directions-pointA">
+          <div class="point-name" id="pointA-name">Point A</div>
+          <div class="point pointA"></div>
+        </div>
+        <hr />
+        <div id="directions-pointB">
+          <div class="point-name" id="pointB-name">Point B</div>
+          <div class="point pointB"></div>
+        </div>
+        <hr />
+      </section>
+      <div class="before-directions">
+        <span data-l10n-string="interface-routeLength">Route length</span>: <strong><span data-l10n-string="interface-around">around</span> <span id="route-length">45 min</span></strong><br />
+      </div>
+      <section class="directions">
+        <ol id="directions-list">
+          
+        </ol>
+      </section>
+      <p class="fine-print" data-l10n-string="routing-disclaimer">
+          Disclaimer!
+        </p>
+    </article>
+  </section>
+  
+  <section role="region" id="introduction-screen" data-position="right">
+    <header class="fixed">
+      <menu type="toolbar">
+        <button id="finish-introduction">
+          <span class="icon icon-forward">forward</span>
+        </button>
+      </menu>
+      <button class="back-button">
+        <span class="icon icon-back">back</span>
+      </button>
+      <h1 data-l10n-string="interface-introductionTitle">Introduction</h1>
+    </header>
+    
+    <div id="swap-language" data-l10n-string="interface-introSwapLanguage">swap langs</div>
+    <article class="content scrollable header">
+      <div id="introduction-contents">
+      
+      </div>
+    </article>
+  </section>
+  <!--<script type="text/javascript" src="js/lib/googlemaps.js"></script>-->
+  <script>L_DISABLE_3D = false; /*L_NO_TOUCH = true;*/</script>
+  <script type="text/javascript" src="js/lib/fastclick.js"></script>
+  <script type="text/javascript" src="js/lib/leaflet.js"></script>
+  <script type="text/javascript" src="js/lib/hammer.min.js"></script>
+  <!--<script type="text/javascript" src="js/lib/leaflet-google.js"></script>
+  <script type="text/javascript" src="js/lib/leaflet-textpath.js"></script>-->
+  <script type="text/javascript" src="js/lib/natcompare.js"></script>
+  
+  <script type="text/javascript" src="js/locales/locale-sr.js"></script>
+  <script type="text/javascript" src="js/locales/locale-en.js"></script>
+  
+  <script type="text/javascript" src="js/miroslav/miroslav.js"></script>
+  <!--<script type="text/javascript" src="js/lib/phantom-limb.js"></script>   -->
+  
+  <script type="text/javascript" src="js/util.js"></script>
+  <script type="text/javascript" defer="defer" src="js/application.js"></script>
+</body>
+</html>
