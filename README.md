@@ -25,6 +25,14 @@ declined. I'll maybe do it when I have some more free time, though.
 <sup>1</sup>: It says there Goran Davidovic received the prize. That's my 
 father's name because I was 16 at the time and not eligible to be team leader.
 
+# Demo
+
+[Click here] [1] to see a live version of the app hosted on GitHub Pages. Be 
+sure to use a Firefox browser as, unfortunately, being a Firefox OS app, 
+Beoprevoz has some issues with other browsers.
+
+[1]: https://geomaster.github.io/beoprevoz
+
 # Features
 
 Features that require Internet access:
