@@ -60,19 +60,19 @@ app, that guides you through some main tasks to ensure a pleasant experience.
 
 # Screenshots
 
-![Intro screen][screens/intro-en.png]
+![Intro screen](screens/intro-en.png)
 Beoprevoz greets you with a friendly introduction screen
 
-![Main menu][screens/menu-en.png]
+![Main menu](screens/menu-en.png)
 The main menu of the app, offering some common choices
 
-![Map screen][screens/map-en.png]
+![Map screen](screens/map-en.png)
 The map screen, showing a GPS-pinpointed location
 
-![Nearest stops][screens/network-en.png]
+![Nearest stops](screens/network-en.png)
 Geolocation-enabled list of nearest stops and their current distances
 
-![Directions][screens/directions-en.png]
+![Directions](screens/directions-en.png)
 A view of the output of the routing algorithm
 
 # The repository
