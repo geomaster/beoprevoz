@@ -33,22 +33,6 @@ miroslav = {
       null;
   },
   route: function(source, dsts) {
-    /*
-     * "If 10 years from now, when you are doing something quick and
-     * dirty, you suddenly visualize that I am looking over your
-     * shoulders and say to yourself: 'Dijkstra would not have liked
-     * this', well that would be enough immortality for me."
-     *                                         -- Edsger Wybe Dijkstra
-     *                                           5.11.1930 - 6.08.2002
-     * 
-     * In your honor, Edsger, I am writing this code today in a way
-     * I believe to be right. With no dirty hacks, no kludges. I am 
-     * writing what I believe, from the bottom of my heart, is good
-     * Javascript. Although we don't like it, Edsger, it's a job. But
-     * I want to do my job the right way.
-     * 
-     * You will not be forgotten.
-     */
     var index_shift = 2, data_shift = 1, internal_shift = 2, _hc = 0,
         _i = miroslav._i, _d = miroslav._d, _h = miroslav._h, _p = miroslav._p,
         _hch = miroslav._hch, _nc = miroslav._nc, _c = miroslav._c, maxInt = 0xffffffff;
