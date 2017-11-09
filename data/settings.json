@@ -115,7 +115,7 @@ __g_FileContents = {
 , "routeVariantCount": 3
 
 , "mapLoadTimeout": 15
-, "googleMapsURL": "https://maps.googleapis.com/maps/api/js?libraries=places&sensor=true&callback="
+, "googleMapsURL": "https://maps.googleapis.com/maps/api/js?libraries=places&sensor=true&key=AIzaSyC66QdhZxAeJecBwAiWo0jSzLD2FZ87OsE&callback="
 , "googleMapLabelURL": "js/lib/google-maplabel.js"
 
 , "ussdPrefix": "*011*"
